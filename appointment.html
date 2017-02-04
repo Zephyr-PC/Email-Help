@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<head>
+<title> Appointment Submit </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="text/javascript">
+<!--
+if (screen.width <= 699) {
+document.location = "../mobile/appointment.html";
+}
+//-->
+</script>
+
+<style>
+.centered {
+	width: 1000px;
+	margin: 0 auto;
+	border-radius: 25px;
+	background: black;
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-top:30px;
+	padding-bottom:30px;
+	box-shadow: 10px 10px 5px #999999;
+	background: black; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(#999999 33%, black); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#999999 33%, black); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#999999 33%, black); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#999999 33%, black); /* Standard syntax (must be last) */
+}
+.centered p{
+	margin-bottom:15px;
+	font-size:21px;
+	font-weight:200;
+}
+table {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+body {margin:0;}
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  border-radius: 15px;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+  border-radius: 15px;
+}
+tt {
+  color: white;
+  font-size: 17px;
+}
+
+ul.topnav li a:hover {background-color: #555;}
+
+ul.topnav li.icon {display: none;}
+
+@media screen and (max-width:679px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:679px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="centered">
+<img style="display: block; margin: 0 auto; width: 100%;" src="./img/Warning Construction.jpg">
+<hr>
+<ul class="topnav" id="myTopnav">
+  <li><a class="active" href="index.html">Home</a></li>
+  <li><a href="#usps">stuff</a></li>
+  <li><a href="#dhl">other-stuff</a><li>
+  <li><a href="#notary">more-stuff</a></li>
+  <li class="icon">
+    <a href="javascript:void(0);" style="font-size:15px;" onclick="menu()">more</a>
+  </li>
+</ul>
+
+<script>
+function menu() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+
+<br>
+<br>
+
+
+<form name="appointment" ng-controller="FormController" ng-submit="appointment.$valid" method="post" action="appointment.php" novalidate>
+	<table>
+		<tr>
+			<th style="color: #e3ded4; font-weight: 200; width: 50%;"> First Name </th>
+			<th style="color: #e3ded4; font-weight: 200; width: 50%;"> Last Name </th>
+		</tr>
+		<tr>
+			<td style="padding-right: 10px;"> <input ng-model="appointment.firstName" type="text" class="form-control" id="firstName" name="firstName" required> </td>
+			<td> <input ng-model="appointment.lastName" type="text" class="form-control" id="lastName" name="lastName" required> </td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<th style="color: #e3ded4; font-weight: 200; width: 50%;"> Email </th>
+			<th style="color: #e3ded4; font-weight: 200; width: 50%;"> Phone Number </th>
+		</tr>
+		<tr>
+			<td style="padding-right: 10px;"> <input ng-model="appointment.email" type="email" class="form-control" id="email" name="email" required> </td>
+			<td> <input ng-model="appointment.phoneNumber" type="text" class="form-control" id="phoneNumber" name="phoneNumber" required> </td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<th style="color: #e3ded4; font-weight: 200; width: 50%;"> Requested Date </th>
+			<th> <th>
+		</tr>
+		<tr>
+			<td style="padding-right: 10px;"> <input ng-model="appointment.startDate" type="date" class="form-control" name="date" id="date" required> </td>
+			<td> <button style="margin: 0 auto" type="submit" value="Submit" class="btn btn-default">Submit</button> </td>
+		</tr>
+	</table>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="//code.angularjs.org/snapshot/angular.min.js"></script>
+
+</body>
+</html>
