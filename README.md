@@ -1,1 +1,2 @@
 # Email-Help
+I've tried allow less secure apps turned on.  The HTML file uses angular.js for the form but doesn't seem very responsive to Firefox (still looking into that) and it seems like the form flows to the PHP code but it stops there on the appointment.php with a blank page and no emails show in my indox.  I've also tried as a Yahoo email but I get the same results.  I'm positive the problem is in the code and I'm either blind or stupid but I can't seem to figure out what I'm missing.
